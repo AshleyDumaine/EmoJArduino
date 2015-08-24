@@ -1,0 +1,9 @@
+If you get a compiler warning on the gnu.io.CommPort import:
+
+Modify your build path to explicitly allow access to the gnu.io.CommPort class:
+
+1. Open the Libraries tab of the Java Build Path project property window.
+2. Expand the JRE System Library entry.
+3. Select "Access rules" and hit the Edit button.
+4. Click the Add button in the resulting dialog.
+5. For the new access rule, set the resolution to Accessible and the pattern to "gnu/io/**".

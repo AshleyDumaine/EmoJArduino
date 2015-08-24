@@ -1,0 +1,8 @@
+This project must be run in 32-bit mode in order to be compatible with the RxTx library.
+
+1. Open the properties for this project.
+2. Select Run/Debug Settings (in the left-hand menu list).
+3. Click on the main class name and then press the Edit button.
+4. Click on the (x)= Arguments tab.
+5. In the VM Arguments box enter -d32
+6. Click OK.
