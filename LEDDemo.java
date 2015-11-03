@@ -26,7 +26,7 @@ public class LEDDemo {
 			t.start();
 
 			//connect to the EPOC server socket
-			Socket clientSocket = new Socket("localhost", 2222);
+			Socket clientSocket = new Socket("localhost", 4444);
 			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 
 			//get user param and use that to turn on the LED and send to server
@@ -86,7 +86,7 @@ public class LEDDemo {
 			inFromUser.close();
 			inFromServer.close();
 			outToServer.close();
-			ard.disconnect(); //makes no sense to include this right now
+			// ard.disconnect(); //makes no sense to include this right now
 		} catch (Exception e) {
 			System.out.println("Could not start EPOC data server socket.");
 			e.printStackTrace();
@@ -94,14 +94,7 @@ public class LEDDemo {
 	}
 
 	public static void LEDSwitch(Arduino ard) {
-		if (LED_ON) {
-			System.out.println("Shutting off LED...");
-			ard.digitalWrite(13, false);
-		}
-		else {
-			System.out.println("Turning on LED...");
-			ard.digitalWrite(13, true);
-		}
+		ard.digitalWrite(13, !LED_ON);
 		LED_ON = !LED_ON;
 	}
 }
